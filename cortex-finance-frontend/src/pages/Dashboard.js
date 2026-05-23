@@ -3,6 +3,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Navbar from "../components/Navbar";
+import Welcome from "../components/Welcome";
+import SummaryCard from "../components/SummaryCard";
+import TransactionTable from "../components/TransactionTable";
+import Charts from "../components/Charts";
+
 import "../App.css";
 
 function Dashboard() {
@@ -13,103 +19,45 @@ function Dashboard() {
 
       {/* Navbar */}
 
-      <div className="dashboard-navbar">
-
-        <h1 className="dashboard-logo">
-          AI Bank Analyzer
-        </h1>
-
-        <button className="logout-button">
-          Logout
-        </button>
-
-      </div>
+      <Navbar />
 
       {/* Welcome Section */}
 
-      <div className="welcome-section">
-
-        <h2>Welcome Back 👋</h2>
-
-        <p>
-          Your financial summary is ready.
-        </p>
-
-      </div>
+      <Welcome />
 
       {/* Summary Cards */}
 
       <div className="card-grid">
 
-        <div className="summary-card">
-          <h3>Total Income</h3>
-          <p>₹50,000</p>
-        </div>
+        <SummaryCard
+          title="Total Income"
+          amount="₹50,000"
+        />
 
-        <div className="summary-card">
-          <h3>Total Expense</h3>
-          <p>₹35,000</p>
-        </div>
+        <SummaryCard
+          title="Total Expense"
+          amount="₹35,000"
+        />
 
-        <div className="summary-card">
-          <h3>Savings</h3>
-          <p>₹15,000</p>
-        </div>
+        <SummaryCard
+          title="Savings"
+          amount="₹15,000"
+        />
 
-        <div className="summary-card">
-          <h3>Financial Score</h3>
-          <p>85%</p>
-        </div>
+        <SummaryCard
+          title="Financial Score"
+          amount="85%"
+        />
 
       </div>
+
+      {/* Charts */}
+
+      <Charts />
 
       {/* Transactions */}
 
-      <div className="transaction-section">
-
-        <h2>Recent Transactions</h2>
-
-        <table className="transaction-table">
-
-          <thead>
-
-            <tr>
-              <th>Date</th>
-              <th>Merchant</th>
-              <th>Category</th>
-              <th>Amount</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-              <td>12 May</td>
-              <td>Amazon</td>
-              <td>Shopping</td>
-              <td>₹2,500</td>
-            </tr>
-
-            <tr>
-              <td>14 May</td>
-              <td>Swiggy</td>
-              <td>Food</td>
-              <td>₹450</td>
-            </tr>
-
-            <tr>
-              <td>16 May</td>
-              <td>Uber</td>
-              <td>Travel</td>
-              <td>₹300</td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
+      <TransactionTable />
 
       {/* AI Insights */}
 
