@@ -22,6 +22,8 @@ async def upload_file(file: UploadFile = File(...)):
     transactions = extract_transactions(file_path)
 
     return {
+        "success": True,
         "filename": file.filename,
-        "transactions": transactions[:5]
+        "transaction_count": len(transactions),
+        "transactions": transactions[:10]
     }

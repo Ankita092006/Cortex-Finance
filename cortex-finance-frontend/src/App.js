@@ -22,6 +22,22 @@ import Chatbot from "./pages/Chatbot";
 
 import "./App.css";
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 function App() {
 
   return (
